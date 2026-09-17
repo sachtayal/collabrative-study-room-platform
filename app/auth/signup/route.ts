@@ -11,9 +11,8 @@ export async function POST(request: NextRequest) {
   };
 
   const trimmedUsername = username?.trim();
-  const trimmedEmail = email?.trim().toLowerCase();
 
-  if (!trimmedUsername || !trimmedEmail || !password) {
+  if (!trimmedUsername || !email || !password) {
     return NextResponse.json(
       { error: "Username, email, and password are required." },
       { status: 400 }
@@ -23,14 +22,14 @@ export async function POST(request: NextRequest) {
   const supabase = await createSupabaseRouteHandlerClient();
 
   const { data, error: signUpError } = await supabase.auth.signUp({
-    email: trimmedEmail,
+    email,
     password,
     options: {
       emailRedirectTo: `${request.nextUrl.origin}/auth/callback`,
       data: {
-        username: trimmedUsername,
-      },
-    },
+        username: trimmedUsername
+      }
+    }
   });
 
   if (signUpError) {
@@ -40,21 +39,13 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  if (!data.user) {
-    return NextResponse.json(
-      { error: "Unable to create account." },
-      { status: 400 }
-    );
-  }
-
   if (data.session) {
     return NextResponse.json({
-      redirectTo: next || "/dashboard",
+      redirectTo: next || "/dashboard"
     });
   }
 
   return NextResponse.json({
-    message:
-      "Check your email to confirm your account, then log in.",
+    message: "Check your email to confirm your account, then log in."
   });
 }
