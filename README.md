@@ -4,7 +4,8 @@ A real-time collaborative study platform designed to help students stay focused,
 
 ## Live Demo
 
-[View Live Application](YOUR_DEPLOYED_URL)
+[🚀 Visit Collaborative Study Room Platform](https://collaborative-study-room-five.vercel.app)
+
 
 ## Key Features
 
