@@ -1,60 +1,142 @@
 # Collaborative Study Room Platform
 
-A realtime study room platform for focused group study sessions. Users can sign up, create or join virtual rooms, chat with members, track online presence, run a synced Pomodoro timer, and review their study history from a personal dashboard.
+A real-time collaborative study platform designed to help students stay focused, study together, and track their productivity. Users can create or join virtual study rooms, communicate through real-time chat, collaborate using synchronized Pomodoro timers, and monitor their study progress through a personalized dashboard.
 
-[Live Demo](YOUR_DEPLOYED_URL)
+## Live Demo
 
-## Features
+[View Live Application](YOUR_DEPLOYED_URL)
 
-- Email and password authentication with protected routes
-- Supabase profile creation for each user
-- Public and private study rooms
-- Browse, create, join, leave, and invite users to rooms
-- Shareable invite links with automatic room joining
-- Realtime room chat powered by Supabase Realtime
-- Online presence indicators for room members
-- Synced Pomodoro timer with 25 minute work and 5 minute break cycles
-- Creator-only timer controls for Start, Pause, and Stop
-- Study session tracking with participants and durations
-- Dashboard with total study hours, weekly sessions, rooms joined, and recent sessions
-- Bonus room leaderboard ranking the top studiers by total study time
+## Key Features
 
-## Tech Stack
+### Authentication & User Management
+- Email and password authentication using Supabase Auth.
+- Protected application routes.
+- Automatic profile creation for registered users.
 
-- Next.js 14 App Router
-- TypeScript
-- Tailwind CSS
-- shadcn/ui-style components
-- Supabase Auth
-- Supabase PostgreSQL
-- Supabase Realtime
-- Vercel deployment target
+### Study Room Management
+- Create and join public or private study rooms.
+- Browse available rooms.
+- Invite users through shareable room links.
+- Join rooms automatically using invitation links.
+- Leave rooms whenever needed.
 
-## Setup
+### Real-Time Collaboration
+- Real-time room chat powered by Supabase Realtime.
+- Online presence indicators for room members.
+- Synchronized Pomodoro timer across room participants.
+- Creator-only timer controls.
 
-1. Clone the repository.
-2. Install dependencies:
+### Pomodoro Productivity System
+- 25-minute focused study sessions.
+- 5-minute break cycles.
+- Start, pause, and stop controls.
+- Synchronized timer state for room participants.
+
+### Personal Dashboard & Analytics
+- Track total study hours.
+- View weekly study sessions.
+- Monitor rooms joined.
+- Review recent study activity.
+- Track session participants and durations.
+
+### Leaderboard
+- Ranking of top studiers based on total study time.
+- Encourages consistency and collaborative productivity.
+
+## Technology Stack
+
+| Category | Technologies |
+|---|---|
+| Frontend | Next.js 14, TypeScript |
+| Styling | Tailwind CSS |
+| UI Components | shadcn/ui-style components |
+| Authentication | Supabase Auth |
+| Database | Supabase PostgreSQL |
+| Real-Time Features | Supabase Realtime |
+| Deployment Target | Vercel |
+
+## Application Architecture
+
+- **Next.js:** Handles the frontend, routing, and application structure.
+- **TypeScript:** Provides type safety and maintainable code.
+- **Supabase Auth:** Manages user registration and authentication.
+- **PostgreSQL:** Stores user profiles, study rooms, memberships, and study session data.
+- **Supabase Realtime:** Supports live chat, online presence, and synchronized room functionality.
+- **Tailwind CSS:** Provides responsive styling and UI design.
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js
+- npm
+- A Supabase account
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sachtayal/collabrative-study-room-platform.git
+cd collabrative-study-room-platform
+```
+
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-3. Create `.env.local` in the project root:
+### 3. Configure Environment Variables
 
-```bash
+Create a `.env.local` file in the project root:
+
+```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-4. Run the SQL in `supabase/schema.sql` inside your Supabase SQL Editor.
-5. Start the development server:
+### 4. Configure Supabase
+
+Run the SQL script provided in `supabase/schema.sql` inside your Supabase SQL Editor.
+
+### 5. Start the Development Server
 
 ```bash
 npm run dev
 ```
 
-6. Open `http://localhost:3000`.
+### 6. Open the Application
+
+Visit:
+
+```text
+http://localhost:3000
+```
 
 ## Screenshots
 
-Screenshots for authentication, room management, realtime chat, synced Pomodoro sessions, dashboard analytics, and leaderboard views will be added here.
+Add screenshots of the following application sections:
+
+- Authentication and registration
+- Study room dashboard
+- Room management
+- Real-time chat
+- Synchronized Pomodoro timer
+- Personal productivity dashboard
+- Study leaderboard
+
+## Future Improvements
+
+- Google OAuth authentication.
+- Video and audio collaboration.
+- AI-powered study recommendations.
+- Advanced productivity analytics.
+- Study goals and progress tracking.
+
+## Author
+
+**Sach Tayal**
+
+GitHub: https://github.com/sachtayal
+
+---
+
+Built with Next.js, TypeScript, and Supabase.
